@@ -1,8 +1,10 @@
 import os.path
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import json
 
 app = Flask(__name__)
+CORS(app)
 
 def save(id, config):
     with open(id + '.txt', 'wb') as outfile:
